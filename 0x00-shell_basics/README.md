@@ -3,3 +3,4 @@
 2. A script that changes the working directory to the user's home directory
 3. A script that displays current working directory in long format
 4. A script that displays hidden files in long format
+5. A script that displays Long forma and numerically
