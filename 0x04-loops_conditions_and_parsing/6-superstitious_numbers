@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Bash script that display number from 1 to 20 and 
+# during the 4th loop print bad luck from china
+# for 9 lopp print bad luck from japan
+# for 17th loop print bad luck from italy
+
+count=1
+while (("$count <= 20"))
+do
+	echo "$count"
+	case "$count" in
+		"4")
+		echo "bad luck from china";;
+		"9")
+		echo "bad luck from Japan";;
+		"17")
+		echo "bad luck from Italy";;
+	esac
+	((count++))
+done
