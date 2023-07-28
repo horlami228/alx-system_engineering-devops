@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Display content of the current working directory in a list format
+
+list=$(ls)
+for dir in $list 
+do
+	echo "$dir" | cut -d '-' -f2
+done
