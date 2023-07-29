@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays the PID of bash that was passed as the process name
+# shellcheck disable=SC2009
+ps -u -a -x -f | grep bash
