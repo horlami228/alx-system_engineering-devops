@@ -10,3 +10,5 @@ Learning about Linux process and how to work with it
 
 [4-to_infinity_and_beyond](./4-to_infinity_and_beyond): A bash script that prints to stdout and sleep for 2 seonds in between printing
 
+[5-dont_stop_me_now](./5-dont_stop_me_now): This script terminates process in [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) with the kill command
+
