@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Kill a process that doesnt want to end the normal way
+# by sending a SIGKILL signal of -9
+
+pkill -9 -f 7-highlander

@@ -15,3 +15,6 @@ Learning about Linux process and how to work with it
 [6-stop_me_if_you_can](./6-stop_me_if_you_can): Used to kill the process using pkill command
 
 [7-highlander](./7-highlander): A process that is not killable by using the trap command
+
+[8-beheaded_process](./8-beheaded_process): Forecfully killing a process by sending a SIGKILL signal of -9
+
