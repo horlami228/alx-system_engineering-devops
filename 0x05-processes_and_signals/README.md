@@ -12,3 +12,4 @@ Learning about Linux process and how to work with it
 
 [5-dont_stop_me_now](./5-dont_stop_me_now): This script terminates process in [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) with the kill command
 
+[6-stop_me_if_you_can](./6-stop_me_if_you_can): Used to kill the process using pkill command
