@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This bash cript display listening ports
+# shows the PID of the name of the program to which the sockets belong to
+
+netstat -l --program
