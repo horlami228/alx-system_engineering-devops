@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Check if the script is being run with superuser (root) privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script as root."
+  exit 1
+fi
+
+# Function to add custom resolutions to the hosts file
+configure_hosts() {
+  echo "127.0.0.2    localhost" >> /etc/hosts
+  echo "8.8.8.8      facebook.com" >> /etc/hosts
+}
+
+# Main function
+main() {
+  echo "Configuring the server with custom resolutions..."
+  configure_hosts
+  echo "Custom resolutions configured successfully."
+}
+
+# Run the main function
+main
