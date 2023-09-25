@@ -2,6 +2,6 @@
 
 file {'~/.ssh/ssh_config':
 
-  content => 'PasswordAuthentication no\nIdentityFile ~/.ssh/school'
+  content => 'PasswordAuthentication no\nIdentityFile ~/.ssh/school\n'
 }
 
