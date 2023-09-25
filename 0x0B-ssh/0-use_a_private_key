@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# This scripts ssh into a server using the private key in ~/.ssh/school
-# with user ubuntu
+# This scripts ssh into a server using the private key in ~/.ssh/school with user ubuntu
 
 ssh -i ~/.ssh/school ubuntu@34.207.63.113
 
