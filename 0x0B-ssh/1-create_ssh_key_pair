@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Generate ssh key pairs with 4096 bits and name school
+
+ssh-keygen -t rsa -b 4096 -f school <<< betty
+
