@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# configure nginx to have a custom header which will be the hostname
+
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+echo "Hello World" | sudo tee /var/www/html/index.html
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+priftf %s "server {
+    listen 80 default_server;
+    listen [::]: 80 default_server;
+    root /var/www/html;
+    index index.html;
+
+    error_page 404 ./404.html
+
+    add_header X-Served-By $hostname;
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
