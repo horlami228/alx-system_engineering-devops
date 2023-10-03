@@ -8,3 +8,11 @@ I was given a second server to setup a nginx web server on top. and an additiona
 
 > * This bash script configures a new server with nginx and it sets the HTTP response to contain a custom header
 
+
+2. ["1-install_load_balancer](./1-install_load_balancer)
+
+> * This bash script setups up HAproxy load balancer on a new machine
+
+e. ["2-puppet_custom_http_response_header.pp](./2-puppet_custom_http_response_header.pp)
+
+> * using puppet to add custom header to http response
