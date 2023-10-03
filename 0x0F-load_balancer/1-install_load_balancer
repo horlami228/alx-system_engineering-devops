@@ -10,6 +10,7 @@ echo | sudo apt-get install haproxy=2.8.\*
 
 # open the config file
 # add the frontend and backend configuration for layer 4
+sudo chown -R "$USER":"$USER" /etc/haproxy/
 
 sudo sh -c 'printf "%s\n" "frontend http_front"    "   bind *:80"  "    mode http"  "   stats uri /haproxy?stats"  "   default_backend http_back" >>  /etc/haproxy/haproxy.cfg'
 
