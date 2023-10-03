@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# configure a new ubuntu machine for HAproxy load balancer
+# we are going to use a roundrobin algorithm for this setup
+
+# install HAproxy
+echo | sudo apt-get install --no-install-recommends software-properties-common -y
+echo | sudo add-apt-repository ppa:vbernat/haproxy-2.8
+
+echo | sudo apt-get install haproxy=2.8.\*
+
+# open the config file
+# add the frontend and backend configuration for layer 4
+
+sudo sh -c 'printf "%s\n" "frontend http_front"    "   bind *:80"  "   stats uri /haproxy?stats"  "   default_backend http_back" >>  /etc/haproxy/haproxy.cfg'
+
+sudo sh -c 'printf "%s\n" "backend http_back" "   balance roundrobin" "   server 138259-web-01 54.174.245.243:80 check" "   server 138259-web-02 3.84.158.22:80 check" >> /etc/haproxy/haproxy.cfg'
+
+sudo service haproxy restart
