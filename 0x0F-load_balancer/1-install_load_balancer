@@ -1,19 +1,25 @@
 #!/usr/bin/env bash
-# configure a new ubuntu machine for HAproxy load balancer
-# we are going to use a roundrobin algorithm for this setup
-
-# install HAproxy
-echo | sudo apt-get install --no-install-recommends software-properties-common -y
-echo | sudo add-apt-repository ppa:vbernat/haproxy-2.8
+# Create a script to install and configure HAProxy on lb-01 server
+# Configure HAProxy to send traffic to web-01 and web-02 servers
+# Distribute requests using a roundrobin algorithm
+# Make sure that HAProxy can be managed via an init script
+# Install and configure HAproxy on my lb-01 server.
 sudo apt-get -y update
-echo | sudo apt-get install haproxy=2.8.\*
+apt-get -y install haproxy
 
-# open the config file
-# add the frontend and backend configuration for layer 4
-
-sudo sh -c 'printf "%s\n" "frontend http_front"    "   bind *:80"  "    mode http"  "   stats uri /haproxy?stats"  "   default_backend http_back" >>  /etc/haproxy/haproxy.cfg'
-
-sudo sh -c 'printf "%s\n" "backend http_back" "   balance roundrobin" "   server 138259-web-01 54.174.245.243:80 check" "   server 138259-web-02 3.84.158.22:80 check" >> /etc/haproxy/haproxy.cfg'
+# edit config file
+server_config=\
+"
+frontend  ehoneah-frontend
+        bind *:80
+        mode http
+        default_backend ehoneah-backend
+backend ehoneah-backend
+        balance roundrobin
+        server 63210-web-01 100.25.19.204:80 check
+        server 63210-web-02 54.157.159.85:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 # enable haproxy to be started by init script
 
