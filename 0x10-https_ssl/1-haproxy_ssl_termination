@@ -1,0 +1,10 @@
+frontend http_front
+        bind *:443 ssl crt /etc/haproxy/ssl/infiniteglitch.pem
+        bind *:443 ssl crt /etc/haproxy/ssl/www.infiniteglitch.pem
+        stats uri /haproxy?stats
+        default_backend http_back
+
+backend http_back
+        balance roundrobin
+        server 138259-web-01 54.174.245.243:80 check
+        server 138259-web-02 3.84.158.22:80 check
