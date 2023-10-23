@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This bash script will be used to create a backup database
+# generate a mysql dump file and compress with tar
+# This script takes one argument which is the password
+
+mysqldump -u root -p"$1" --all-databases > backup.sql
+tar -czvf "$(date +%d-%m-%Y)".tar.gz backup.sql
+
+
+
+
