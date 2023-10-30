@@ -24,7 +24,7 @@ if __name__ == "__main__":
                     completed_task.append(task)
             len_com_task = len(completed_task)
 
-            print("Employee {} is done with tasks ({}/{}):".
+            print("Employee {} is done with tasks({}/{}):".
                   format(name, len_com_task, all_task))
             for task in completed_task:
                 print("\t {}".format(task.get("title")))
