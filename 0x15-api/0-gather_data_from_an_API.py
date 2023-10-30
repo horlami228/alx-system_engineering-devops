@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
     This script accepts one argument as employye_id
     and returns information about his/her TODO list progress
