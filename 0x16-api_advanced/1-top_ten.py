@@ -23,4 +23,4 @@ def top_ten(subreddit):
         for title in data:
             print(title["data"]["title"])
     except Exception:
-        return 0
+        print(None)
