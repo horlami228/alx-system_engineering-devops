@@ -15,6 +15,6 @@ def number_of_subscribers(subreddit):
 
     response = requests.get(url, headers=user_agent)
     try:
-        print(response.json()["data"]["subscribers"])
+        return (response.json()["data"]["subscribers"])
     except Exception:
         return 0
