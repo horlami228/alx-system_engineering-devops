@@ -11,7 +11,7 @@ def recurse(subreddit, hot_list=[]):
     if type(subreddit) is not str:
         return None
     global after
-    url = "https://www.reddit.com/r/{}/hot/.json?".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     set_header = {"User-Agent": 'Google Chrome Version 81.0.4044.129'}
     pagination = {"after": after}
 
