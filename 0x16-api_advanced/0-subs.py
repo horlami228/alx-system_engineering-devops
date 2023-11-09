@@ -3,7 +3,6 @@
 
 """This script queries the Reddit API and returns
 the number of total subcribers"""
-from sys import argv
 import requests
 
 
